@@ -1,0 +1,16 @@
+.tile-view {
+    margin: auto;
+    width: 90%;
+    height: 84vh;
+    overflow: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.list-view {
+    margin: auto;
+    width: 90%;
+    height: 80vh;
+    overflow: scroll;
+}

@@ -1,0 +1,31 @@
+.opp-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    width: 90vw;
+    margin: auto;
+    align-items: center;
+}
+
+h2 {
+    margin: 0px;
+}
+
+h4 {
+    margin: 0px;
+}
+
+select {
+    margin: 0px 4px;
+    width: 160px;
+}
+
+.opp-header-tools {
+    display: flex;
+    justify-content: space-between;
+    width: 35%;
+}
+
+.opp-header-sort {
+    display: flex;
+}

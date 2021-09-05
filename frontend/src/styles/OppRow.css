@@ -1,0 +1,10 @@
+.opp-row {
+    border: 1px solid black;
+    border-radius: 16px;
+    margin: 8px 0px;
+    display: flex;
+    padding: 16px;
+    justify-content: space-between;
+}
+
+
