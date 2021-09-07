@@ -18,7 +18,7 @@ p {
     margin: 4px 0px;
 }
 
-.app-tile {
+.opp-tile {
     width: 300px;
     border: 1px solid black;
     border-radius: 16px;
@@ -26,42 +26,42 @@ p {
     padding: 0px 32px;
 }
 
-.app-card-header {
+.opp-card-header {
     padding: 12px 0px;
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
 }
 
-.app-card-header span {
+.opp-card-header span {
     margin: 0px 0px 0px 8px;
 }
 
-.app-card-hero {
+.opp-card-hero {
     padding: 8px 0px 16px 0px;
 }
 
-.app-card-hero p {
+.opp-card-hero p {
     text-align: right;
 }
 
-.app-card-body {
+.opp-card-body {
     text-align: left;
     padding: 16px;
 }
 
-.app-card-body-content {
+.opp-card-body-content {
     height: 44px;
     overflow: scroll;
 }
 
-.app-card-details {
+.opp-card-details {
     padding: 16px;
     display: flex;
     justify-content: space-between;
 }
 
-.app-card-footer {
+.opp-card-footer {
     padding: 16px;
     display: flex;
     justify-content: space-around;
