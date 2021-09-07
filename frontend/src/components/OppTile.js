@@ -9,14 +9,14 @@ export const OppTile = ({ opportunity }) => {
             </div>
             <hr></hr>
             <div className="opp-card-hero">
-                <h2>{opportunity.jobTitle}</h2>
+                <h2>{opportunity.job_title}</h2>
                 <h2>at</h2>
                 <h2>{opportunity.company}</h2>
             </div>
             <hr></hr>
             <div className="opp-card-body">
                 <h5>Description:</h5>
-                <div className="opp-card-body-content"><p>{opportunity.desc}</p></div>
+                <div className="opp-card-body-content"><p>{opportunity.description}</p></div>
 
             </div>
             <hr></hr>
@@ -31,18 +31,18 @@ export const OppTile = ({ opportunity }) => {
                 </div>
                 <div>
                     <h5>Interest:</h5>
-                    <p>{opportunity.interestLevel}</p>
+                    <p>{opportunity.interest_level}</p>
                 </div>
             </div>
             <hr></hr>
             <div className="opp-card-footer">
                 <div>
                     <p>Date opplied:</p>
-                    <p>{opportunity.dateopplied}</p>
+                    <p>{opportunity.date_applied}</p>
                 </div>
                 <div>
                     <p>Last Contact:</p>
-                    <p>{opportunity.lastContact}</p>
+                    <p>{opportunity.last_contact}</p>
                 </div>
             </div>
         </div>
