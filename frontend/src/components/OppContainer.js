@@ -76,8 +76,9 @@ export const OppContainer = () => {
                 <OppHeader toggleView={toggleView} />
                 <div className="list-view">
                     {oppRows}
-                    <NewRow addOpportunity={addOpportunity}/>
+                    <NewRow toggleModal={toggleModal}/>
                 </div>
+                <OppModal modalClass={modalClass} toggleModal={toggleModal}/>
             </>
         )
     }

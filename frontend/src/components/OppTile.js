@@ -37,7 +37,7 @@ export const OppTile = ({ opportunity }) => {
             <hr></hr>
             <div className="opp-card-footer">
                 <div>
-                    <p>Date opplied:</p>
+                    <p>Date Applied:</p>
                     <p>{opportunity.date_applied}</p>
                 </div>
                 <div>
