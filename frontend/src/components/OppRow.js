@@ -6,7 +6,7 @@ export const OppRow = ({ opportunity }) => {
         <div className="opp-row">
             <div className="">
                 <h5>Job Title:</h5>
-                <h5>{ opportunity.jobTitle }</h5>
+                <h5>{ opportunity.job_title }</h5>
             </div>
             <div>
                 <h5>Company:</h5>
@@ -22,15 +22,15 @@ export const OppRow = ({ opportunity }) => {
             </div>
             <div>
                 <h5>Interest:</h5>
-                <h5>{ opportunity.interestLevel }</h5>
+                <h5>{ opportunity.interest_level }</h5>
             </div>
             <div>
                 <h5>Date Applied:</h5>
-                <h5>{ opportunity.dateApplied }</h5>
+                <h5>{ opportunity.date_applied }</h5>
             </div>
             <div>
                 <h5>Last Contact:</h5>
-                <h5>{ opportunity.lastContact }</h5>
+                <h5>{ opportunity.last_contact }</h5>
             </div>
         </div>
     )
