@@ -1,0 +1,68 @@
+hr {
+    background-color: rgb(190, 190, 190);
+    border: 0px;
+    height: 1px;
+    margin: 0px;
+}
+
+h2 {
+    margin: 8px 0px 0px 0px;
+}
+
+h5 {
+    margin: 0px;
+}
+
+p {
+    font-size: 12px;
+    margin: 4px 0px;
+}
+
+.opp-tile {
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 16px;
+    margin: 32px;
+    padding: 0px 32px;
+}
+
+.opp-card-header {
+    padding: 12px 0px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.opp-card-header span {
+    margin: 0px 0px 0px 8px;
+}
+
+.opp-card-hero {
+    padding: 8px 0px 16px 0px;
+}
+
+.opp-card-hero p {
+    text-align: right;
+}
+
+.opp-card-body {
+    text-align: left;
+    padding: 16px;
+}
+
+.opp-card-body-content {
+    height: 44px;
+    overflow: scroll;
+}
+
+.opp-card-details {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.opp-card-footer {
+    padding: 16px;
+    display: flex;
+    justify-content: space-around;
+}

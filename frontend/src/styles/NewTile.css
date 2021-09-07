@@ -1,0 +1,26 @@
+.new-tile {
+    width: 300px;
+    height: 420px;
+    border: 1px solid gray;
+    border-radius: 16px;
+    margin: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 32px;
+}
+
+.plus-btn {
+    cursor: pointer;
+    border: none;
+    width: 120px;
+    height: 120px;
+    border-radius: 16px;
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    background-color: rgb(189, 189, 189);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

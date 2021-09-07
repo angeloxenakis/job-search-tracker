@@ -1,0 +1,23 @@
+.new-row {
+    border: 1px solid gray;
+    border-radius: 16px;
+    margin: 8px 0px;
+    display: flex;
+    padding: 16px;
+    justify-content: space-between;
+}
+
+.row-plus-btn {
+    cursor: pointer;
+    border: none;
+    width: 300px;
+    border-radius: 8px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: rgb(189, 189, 189);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
