@@ -16,7 +16,7 @@ export const OppTile = ({ opportunity }) => {
             <hr></hr>
             <div className="opp-card-body">
                 <h5>Description:</h5>
-                <div className="opp-card-body-content"><p>{opportunity.desc}</p></div>
+                <div className="opp-card-body-content"><p>{opportunity.description}</p></div>
 
             </div>
             <hr></hr>

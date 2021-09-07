@@ -1,10 +1,10 @@
 import React from "react";
 import "../styles/NewTile.css"
 
-export const NewTile = ({ addOpportunity }) => {
+export const NewTile = ({ addOpportunity, toggleModal }) => {
     return(
         <div className="new-tile">
-            <button onClick={addOpportunity} className="plus-btn">+</button>
+            <button onClick={toggleModal} className="plus-btn">+</button>
         </div>
     )
 }
