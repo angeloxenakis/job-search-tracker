@@ -6,7 +6,7 @@ hr {
 }
 
 h2 {
-    margin: 8px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
 }
 
 h5 {
@@ -20,10 +20,13 @@ p {
 
 .opp-tile {
     width: 300px;
-    border: 1px solid black;
+    border: 1px solid rgb(88, 88, 88);
     border-radius: 16px;
     margin: 32px;
     padding: 0px 32px;
+    background-color: rgb(20, 20, 20);
+    color: whitesmoke;
+    box-shadow: 5px 5px 10px rgb(20, 20, 20);
 }
 
 .opp-card-header {

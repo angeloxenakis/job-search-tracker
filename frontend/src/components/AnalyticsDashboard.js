@@ -4,7 +4,7 @@ import "../styles/AnalyticsDashboard.css"
 export const AnalyticsDashboard = ({ opportunities }) => {
     return(
         <div className="analytics-dashboard">
-            <h1>Analytics</h1>
+            <h2>Analytics</h2>
             <div className="analtyics-container">
                 <div className="opp-analytics">
                     <div className="opp-analytics-hero">
