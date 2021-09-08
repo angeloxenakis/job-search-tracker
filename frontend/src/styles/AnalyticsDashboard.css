@@ -1,0 +1,39 @@
+.analytics-dashboard {
+    padding: 0px 32px;
+    border: 1px solid black;
+}
+
+.analtyics-container {
+    display: flex;
+    border: 1px solid black;
+    border-radius: 16px;
+}
+
+.opp-analytics {
+    display: flex;
+    text-align: center;
+    width: 60vw;
+    padding: 8px;
+}
+
+.opp-analytics-hero {
+    border: 1px solid black;
+    width: 60%;
+    border-radius: 16px;
+    margin: 8px;
+}
+
+/* .opp-analytics-details {
+    border: 1px solid black;
+    width: 40%;
+    height: 200px;
+    border-radius: 16px;
+    margin: 8px;
+} */
+
+.opp-analytics-detail-block {
+    border: 1px solid black;
+    border-radius: 16px;
+    margin: 8px;
+    padding: 8px;
+}

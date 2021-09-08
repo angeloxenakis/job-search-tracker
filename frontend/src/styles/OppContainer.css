@@ -1,7 +1,7 @@
 .tile-view {
     margin: auto;
     width: 90%;
-    height: 84vh;
+    height: 74vh;
     overflow: scroll;
     display: flex;
     flex-wrap: wrap;
@@ -11,6 +11,6 @@
 .list-view {
     margin: auto;
     width: 90%;
-    height: 80vh;
+    height: 74vh;
     overflow: scroll;
 }
