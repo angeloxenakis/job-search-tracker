@@ -1,10 +1,11 @@
 import React from "react"
+import { AnalyticsHeader } from "./AnalyticsHeader"
 import "../styles/AnalyticsDashboard.css"
 
 export const AnalyticsDashboard = ({ opportunities }) => {
     return(
         <div className="analytics-dashboard">
-            <h2>Analytics</h2>
+            <AnalyticsHeader />
             <div className="analtyics-container">
                 <div className="opp-analytics">
                     <div className="opp-analytics-hero">
@@ -21,12 +22,16 @@ export const AnalyticsDashboard = ({ opportunities }) => {
                             <h3>0 / {opportunities.length}</h3>
                         </div>
                     </div>
-                </div>
-                <div className="contact-analytics">
-                    <h2>Total Contacts</h2>
-                    <h2>0</h2>
-                    <h3>Outreach</h3>
-                    <h3>0</h3>
+                    <div className="opp-analytics-details">
+                        <div className="opp-analytics-detail-block">
+                            <h2>Total Contacts</h2>
+                            <h2>0</h2>
+                        </div>
+                        <div className="opp-analytics-detail-block">
+                            <h3>Outreach</h3>
+                            <h3>0</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
