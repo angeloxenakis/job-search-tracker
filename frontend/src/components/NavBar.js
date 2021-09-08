@@ -5,7 +5,7 @@ export const NavBar = () => {
     return(
         <div className="nav-bar">
             <div className="nav-bar-block">
-                <h3>Job Search Tracker</h3>
+                <h1>Job Search Tracker</h1>
             </div>
             <div className="nav-bar-block">
                 <a href="/">Login </a>
