@@ -6,6 +6,7 @@ import { NewTile } from "./NewTile"
 import { OppRow } from "./OppRow"
 import { NewRow } from "./NewRow"
 import { OppModal } from "./OppModal"
+import { AnalyticsDashboard } from "./AnalyticsDashboard"
 import "../styles/OppContainer.css"
 import "../styles/OppModal.css"
 
@@ -50,6 +51,7 @@ export const OppContainer = () => {
                     <NewTile toggleModal={toggleModal}/>
                 </div>
                 <OppModal modalClass={modalClass} toggleModal={toggleModal} addOpportunity={addOpportunity}/>
+                <AnalyticsDashboard opportunities={opportunities}/>
             </>
         )
     } else if (view === "list") {
@@ -61,6 +63,7 @@ export const OppContainer = () => {
                     <NewRow toggleModal={toggleModal}/>
                 </div>
                 <OppModal modalClass={modalClass} toggleModal={toggleModal}/>
+                <AnalyticsDashboard opportunities={opportunities}/>
             </>
         )
     }
