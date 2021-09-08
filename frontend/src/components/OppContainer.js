@@ -37,26 +37,8 @@ export const OppContainer = () => {
         console.log(modalClass)
     }
 
-    const addOpportunity = () => {
-        // fetch("http://localhost:3000/opportunities", {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-Type": "application/json",
-        //         "Accept": "applicaiton/json"
-        //     },
-        //     body: JSON.stringify({
-        //         company: "",
-        //         job_title: "",
-        //         description: "",
-        //         salary: "",
-        //         location: "",
-        //         interest_level: "",
-        //         date_applied: "",
-        //         last_contact: ""
-        //     })
-        // })
-        // .then(res => res.json())
-        // .then(newOpportunity => setOpportunities([...opportunities, newOpportunity]))
+    const addOpportunity = (newOpp) => {
+        setOpportunities([...opportunities, newOpp])
     }
 
     if (view === "tile") {
@@ -67,7 +49,7 @@ export const OppContainer = () => {
                     {oppTiles}
                     <NewTile toggleModal={toggleModal}/>
                 </div>
-                <OppModal modalClass={modalClass} toggleModal={toggleModal}/>
+                <OppModal modalClass={modalClass} toggleModal={toggleModal} addOpportunity={addOpportunity}/>
             </>
         )
     } else if (view === "list") {
