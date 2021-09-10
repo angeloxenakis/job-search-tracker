@@ -43,7 +43,8 @@ export const OppContainer = () => {
     }
 
     const sortOpps = (sortSelection) => {
-        console.log(sortSelection)
+        console.log(opportunityData.sort((opp1, opp2) => opp1[sortSelection] > opp2[sortSelection] ? 1 : opp1[sortSelection] < opp2[sortSelection] ? -1 : 0))
+        setOpportunities(opportunityData.sort((opp1, opp2) => opp1[sortSelection] > opp2[sortSelection] ? 1 : opp1[sortSelection] < opp2[sortSelection] ? -1 : 0))
     }
 
     const toggleModal = () => {
@@ -58,7 +59,7 @@ export const OppContainer = () => {
     if (view === "tile") {
         return(
             <>
-                <OppHeader toggleView={toggleView} filterOpps={filterOpps} sortOpps={sortOpps}/>
+                <OppHeader toggleView={toggleView} filterOpps={filterOpps} sortOpps={sortOpps} toggleModal={toggleModal}/>
                 <div className="tile-view">
                     {oppTiles}
                     <NewTile toggleModal={toggleModal}/>
@@ -70,7 +71,7 @@ export const OppContainer = () => {
     } else if (view === "list") {
         return(
             <>
-                <OppHeader toggleView={toggleView} filterOpps={filterOpps}/>
+                <OppHeader toggleView={toggleView} filterOpps={filterOpps} toggleModal={toggleModal}/>
                 <div className="list-view">
                     {oppRows}
                     <NewRow toggleModal={toggleModal}/>

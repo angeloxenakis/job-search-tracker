@@ -1,7 +1,7 @@
 import React from "react"
 import "../styles/OppHeader.css"
 
-export const OppHeader = ({ toggleView, filterOpps, sortOpps }) => {
+export const OppHeader = ({ toggleView, filterOpps, sortOpps, toggleModal }) => {
 
     const handleSearchInput = (e) => {
         filterOpps(e.target.value)
@@ -31,7 +31,13 @@ export const OppHeader = ({ toggleView, filterOpps, sortOpps }) => {
                             <option value="last_contact">Date Applied</option>
                         </select>
                     </div>
-                    View: <span onClick={() => toggleView("tile")}>Tile</span> | <span onClick={() => toggleView("list")}>List</span>
+                    <div>
+                        View: <span onClick={() => toggleView("tile")}>Tile</span> | <span onClick={() => toggleView("list")}>List</span>
+                    </div>
+                    <div>
+                        Add <button className="opp-header-add" onClick={toggleModal}>+</button>
+                    </div>
+
                 </div>
             </div>
         </div>
