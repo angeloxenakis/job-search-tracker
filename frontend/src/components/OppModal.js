@@ -38,18 +38,38 @@ export const OppModal = ({modalClass, toggleModal, addOpportunity}) => {
         <>
             <div className={modalClass}>
                 <div className="modal-content">
-                    <span className="close" onClick={toggleModal}>&times;</span>
-                    <form onSubmit={handleSubmit}>
-                        Job Title: <input type="text" name="job_title" onChange={(e) => handleFormInput(e)}/><br/><br/>
-                        Company: <input type="text" name="company" onChange={(e) => handleFormInput(e)}/><br/><br/>
-                        Description: <input type="text" name="description" onChange={(e) => handleFormInput(e)}/><br/><br/>
-                        Salary: <input type="text" name="salary" onChange={(e) => handleFormInput(e)}/><br/><br/>
-                        Location: <input type="text" name="location" onChange={(e) => handleFormInput(e)}/><br/><br/>
-                        Interest: <input type="text" name="interest_level" onChange={(e) => handleFormInput(e)}/><br/><br/>
-                        Date Applied: <input type="text" name="date_applied" onChange={(e) => handleFormInput(e)}/><br/><br/>
-                        Last Contact: <input type="text" name="last_contact" onChange={(e) => handleFormInput(e)}/><br/><br/>
-                        <input type="submit" />
-                    </form>
+                    <div className="modal-header">
+                        <h2>Add Opportunity</h2>
+                        <span className="close" onClick={toggleModal}>&times;</span>
+                    </div>
+                    <div className="modal-body">
+                        <form onSubmit={handleSubmit}>
+                            <div>
+                                Job Title: <input type="text" name="job_title" onChange={(e) => handleFormInput(e)}/>
+                                Company: <input type="text" name="company" onChange={(e) => handleFormInput(e)}/>
+                            </div>
+                            <div>
+                                Description: <input type="text" name="description" onChange={(e) => handleFormInput(e)}/>
+                            </div>
+                            <div>
+                                Salary: <input type="text" name="salary" onChange={(e) => handleFormInput(e)}/>
+                                Location: <input type="text" name="location" onChange={(e) => handleFormInput(e)}/>
+                                Interest: <input type="text" name="interest_level" onChange={(e) => handleFormInput(e)}/>
+                            </div>
+                            <div>
+                                Date Applied: <input type="text" name="date_applied" onChange={(e) => handleFormInput(e)}/>
+                                Last Contact: <input type="text" name="last_contact" onChange={(e) => handleFormInput(e)}/>
+                            </div>
+
+
+                            <input type="submit" />
+                        </form>
+                    </div>
+                    <div className="modal-footer">
+                        <button>Cancel</button>
+                        <button>Create</button>
+                    </div>
+
                 </div>
             </div>
         </>
