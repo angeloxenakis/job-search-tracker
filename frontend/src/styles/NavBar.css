@@ -3,7 +3,8 @@ h1 {
 }
 
 a {
-    color: whitesmoke
+    color: whitesmoke;
+    text-decoration: none;
 }
 
 .nav-bar {
@@ -13,4 +14,11 @@ a {
     border-bottom: 1px solid rgb(88, 88, 88);
     color: whitesmoke;
     background-color: rgb(19, 19, 19);
+    align-items: center;
+}
+
+.nav-bar-tools {
+    display: flex;
+    justify-content: space-between;
+    width: 20vw;
 }

@@ -5,12 +5,12 @@ export const NavBar = () => {
     return(
         <div className="nav-bar">
             <div className="nav-bar-block">
-                <h1>Job Search Tracker</h1>
+                <a href="/"><h1>Job Opp Tracker</h1></a>
             </div>
-            <div className="nav-bar-block">
-                <a href="/">Login </a>
-                or
-                <a href="/"> Signup</a>
+            <div className="nav-bar-tools">
+                <div>About</div>
+                <div>Settings</div>
+                <div>Login</div>
             </div>
         </div>
     )

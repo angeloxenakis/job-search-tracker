@@ -11,14 +11,18 @@ import "../styles/OppContainer.css"
 import "../styles/OppModal.css"
 
 export const OppContainer = () => {
+    const [ opportunityData, setOpportunityData ] = useState(oppData)
     const [ opportunities, setOpportunities ] = useState(oppData)
     const [ view, setView ] = useState("tile")
-    const [modalClass, setModalClass] = useState("modal-hide")
+    const [ modalClass, setModalClass ] = useState("modal-hide")
 
     useEffect(() => {
         fetch("http://localhost:3000/opportunities")
         .then(res => res.json())
-        .then(opps => setOpportunities(opps))
+        .then(opps => {
+            setOpportunityData(opps)
+            setOpportunities(opps)
+        })
     }, [])
 
     const toggleView = (viewSelection) => {
@@ -33,6 +37,16 @@ export const OppContainer = () => {
         opportunities.map(opportunity => <OppRow opportunity={opportunity} key={opportunity.id}/>)
     )
 
+    const filterOpps = (searchTerm) => {
+        console.log(searchTerm)
+        setOpportunities(opportunityData.filter(opp => opp.job_title.toLowerCase().includes(searchTerm.toLowerCase())))
+    }
+
+    const sortOpps = (sortSelection) => {
+        console.log(opportunityData.sort((opp1, opp2) => opp1[sortSelection] > opp2[sortSelection] ? 1 : opp1[sortSelection] < opp2[sortSelection] ? -1 : 0))
+        setOpportunities(opportunityData.sort((opp1, opp2) => opp1[sortSelection] > opp2[sortSelection] ? 1 : opp1[sortSelection] < opp2[sortSelection] ? -1 : 0))
+    }
+
     const toggleModal = () => {
         modalClass === "modal-show" ? setModalClass("modal-hide") : setModalClass("modal-show")
         console.log(modalClass)
@@ -45,7 +59,7 @@ export const OppContainer = () => {
     if (view === "tile") {
         return(
             <>
-                <OppHeader toggleView={toggleView}/>
+                <OppHeader toggleView={toggleView} filterOpps={filterOpps} sortOpps={sortOpps} toggleModal={toggleModal}/>
                 <div className="tile-view">
                     {oppTiles}
                     <NewTile toggleModal={toggleModal}/>
@@ -57,7 +71,7 @@ export const OppContainer = () => {
     } else if (view === "list") {
         return(
             <>
-                <OppHeader toggleView={toggleView} />
+                <OppHeader toggleView={toggleView} filterOpps={filterOpps} toggleModal={toggleModal}/>
                 <div className="list-view">
                     {oppRows}
                     <NewRow toggleModal={toggleModal}/>
