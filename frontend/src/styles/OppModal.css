@@ -2,7 +2,7 @@
     display: block; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    padding-top: 72px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -23,14 +23,17 @@
     padding: 16px;
     border-bottom: 1px solid #888;
   }
+
+  .modal-body {
+    padding: 48px;
+  } 
   
-  /* Modal Content */
   .modal-content {
     border-radius: 16px;
-    background-color: #fefefe;
+    background-color: #464646;
     margin: auto;
-    border: 1px solid #888;
     width: 900px;
+    color: whitesmoke;
   }
 
 
@@ -40,7 +43,6 @@
   }
 
   
-  /* The Close Button */
   .close {
     color: #aaaaaa;
     font-size: 28px;
@@ -49,19 +51,29 @@
   
   .close:hover,
   .close:focus {
-    color: #000;
+    color: whitesmoke;
     text-decoration: none;
     cursor: pointer;
   }
 
   .modal-form {
-    border: 1px solid black;
-    width:80%;
+    /* width:80%; */
     margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 40vh;
+    height: 50vh;
+  }
+
+  .modal-form input{
+    background-color: rgb(175, 175, 175);
+    border-radius: 8px;
+  }
+
+  .modal-form textarea{
+    background-color: rgb(175, 175, 175);
+    border-radius: 8px;
+    border: 0px;
   }
 
   .bi-input {
@@ -73,13 +85,14 @@
 
   .tri-input {
     height: 24px;
+    width: 150px;
     padding: 4px;
     font-size: 16px;
   }
 
   .large-input {
-    width: 710px;
-    height: 40px;
+    width: 792px;
+    height: 80px;
     padding: 4px;
     font-size: 16px; 
   }
@@ -91,3 +104,23 @@
     padding: 16px;
     border-top: 1px solid #888;
   }
+
+  .cancel-btn {
+    border: none;
+    border-radius: 8px;
+    width: 120px;
+    padding: 12px;
+    background-color: gray;
+    color: whitesmoke;
+  }
+
+  .create-btn {
+    border: none;
+    border-radius: 8px;
+    width: 120px;
+    padding: 12px;
+    font-weight: bold;
+    background-color: rgb(68, 165, 68);
+    color: whitesmoke;
+  }
+
