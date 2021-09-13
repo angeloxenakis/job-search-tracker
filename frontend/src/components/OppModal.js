@@ -43,25 +43,23 @@ export const OppModal = ({modalClass, toggleModal, addOpportunity}) => {
                         <span className="close" onClick={toggleModal}>&times;</span>
                     </div>
                     <div className="modal-body">
-                        <form onSubmit={handleSubmit}>
-                            <div>
-                                Job Title: <input type="text" name="job_title" onChange={(e) => handleFormInput(e)}/>
-                                Company: <input type="text" name="company" onChange={(e) => handleFormInput(e)}/>
+                        <form onSubmit={handleSubmit} className="modal-form">
+                            <div className="modal-block">
+                                <span>Job Title: <input type="text" name="job_title" className="bi-input" onChange={(e) => handleFormInput(e)}/></span>
+                                <span>Company: <input type="text" name="company" className="bi-input" onChange={(e) => handleFormInput(e)}/></span>
                             </div>
                             <div>
-                                Description: <input type="text" name="description" onChange={(e) => handleFormInput(e)}/>
+                                Description: <textarea name="description" className="large-input" onChange={(e) => handleFormInput(e)}></textarea>
                             </div>
-                            <div>
-                                Salary: <input type="text" name="salary" onChange={(e) => handleFormInput(e)}/>
-                                Location: <input type="text" name="location" onChange={(e) => handleFormInput(e)}/>
-                                Interest: <input type="text" name="interest_level" onChange={(e) => handleFormInput(e)}/>
+                            <div className="modal-block">
+                                Salary: <input type="text" name="salary" className="tri-input" onChange={(e) => handleFormInput(e)}/>
+                                Location: <input type="text" name="location" className="tri-input"  onChange={(e) => handleFormInput(e)}/>
+                                Interest: <input type="text" name="interest_level" className="tri-input"  onChange={(e) => handleFormInput(e)}/>
                             </div>
-                            <div>
+                            <div className="modal-block">
                                 Date Applied: <input type="text" name="date_applied" onChange={(e) => handleFormInput(e)}/>
                                 Last Contact: <input type="text" name="last_contact" onChange={(e) => handleFormInput(e)}/>
                             </div>
-
-
                             <input type="submit" />
                         </form>
                     </div>

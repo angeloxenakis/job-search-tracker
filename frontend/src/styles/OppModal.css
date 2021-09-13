@@ -30,7 +30,13 @@
     background-color: #fefefe;
     margin: auto;
     border: 1px solid #888;
-    width: 60%;
+    width: 900px;
+  }
+
+
+  .modal-block {
+    display: flex;
+    justify-content: space-between;
   }
 
   
@@ -46,6 +52,36 @@
     color: #000;
     text-decoration: none;
     cursor: pointer;
+  }
+
+  .modal-form {
+    border: 1px solid black;
+    width:80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 40vh;
+  }
+
+  .bi-input {
+    width: 240px;
+    height: 24px;
+    padding: 4px;
+    font-size: 16px;
+  }
+
+  .tri-input {
+    height: 24px;
+    padding: 4px;
+    font-size: 16px;
+  }
+
+  .large-input {
+    width: 710px;
+    height: 40px;
+    padding: 4px;
+    font-size: 16px; 
   }
 
   .modal-footer {
