@@ -37,18 +37,23 @@ export const OppModal = ({modalClass, toggleModal, addOpportunity}) => {
                     </div>
                     <div className="modal-body">
                         <form onSubmit={handleSubmit} className="modal-form">
-                            <div className="modal-block">
-                                <span>Job Title: <input type="text" name="job_title" value={formValues.job_title} className="bi-input" onChange={(e) => handleFormInput(e)}/></span>
-                                <span>Company: <input type="text" name="company" value={formValues.company} className="bi-input" onChange={(e) => handleFormInput(e)}/></span>
+                            <div className="modal-container">
+                                <div className="modal-hero">
+                                    <div className="modal-row">
+                                        <span>Job Title: <br></br><input type="text" name="job_title" value={formValues.job_title} className="bi-input" onChange={(e) => handleFormInput(e)}/></span>
+                                        <span>Company: <br></br><input type="text" name="company" value={formValues.company} className="bi-input" onChange={(e) => handleFormInput(e)}/></span>
+                                    </div>
+                                    <div>
+                                        Description: <br></br><textarea name="description" value={formValues.description} className="large-input" onChange={(e) => handleFormInput(e)}></textarea>
+                                    </div>  
+                                </div>
+                                <div className="modal-column">
+                                    <div className="modal-col-input">Salary: <input type="text" name="salary" value={formValues.salary} className="tri-input" onChange={(e) => handleFormInput(e)}/></div>
+                                    <div className="modal-col-input">Location: <input type="text" name="location" value={formValues.location} className="tri-input"  onChange={(e) => handleFormInput(e)}/></div>
+                                    <div className="modal-col-input">Interest: <input type="text" name="interest_level" value={formValues.interest_level} className="tri-input"  onChange={(e) => handleFormInput(e)}/></div>
+                                </div>
                             </div>
-                            <div>
-                                Description: <textarea name="description" value={formValues.description} className="large-input" onChange={(e) => handleFormInput(e)}></textarea>
-                            </div>
-                            <div className="modal-block">
-                                <span>Salary: <input type="text" name="salary" value={formValues.salary} className="tri-input" onChange={(e) => handleFormInput(e)}/></span>
-                                <span>Location: <input type="text" name="location" value={formValues.location} className="tri-input"  onChange={(e) => handleFormInput(e)}/></span>
-                                <span>Interest: <input type="text" name="interest_level" value={formValues.interest_level} className="tri-input"  onChange={(e) => handleFormInput(e)}/></span>
-                            </div>
+                            
                             <div className="modal-block">
                                 <span>Date Applied: <input type="text" name="date_applied" value={formValues.date_applied} className="bi-input" onChange={(e) => handleFormInput(e)}/></span>
                                 <span>Last Contact: <input type="text" name="last_contact" value={formValues.last_contact} className="bi-input" onChange={(e) => handleFormInput(e)}/></span>
