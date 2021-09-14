@@ -6,6 +6,7 @@ import { NewTile } from "./NewTile"
 import { OppRow } from "./OppRow"
 import { NewRow } from "./NewRow"
 import { OppModal } from "./OppModal"
+import { OppDetailsModal } from "./OppDetailsModal"
 import { AnalyticsDashboard } from "./AnalyticsDashboard"
 import "../styles/OppContainer.css"
 import "../styles/OppModal.css"
@@ -15,6 +16,8 @@ export const OppContainer = () => {
     const [ opportunities, setOpportunities ] = useState(oppData)
     const [ view, setView ] = useState("tile")
     const [ modalClass, setModalClass ] = useState("modal-hide")
+    const [ detailModalClass, setDetailModalClass ] = useState("modal-hide")
+    const [ selectedOpp, setSelectedOpp ] = useState({})
 
     useEffect(() => {
         fetch("http://localhost:3000/opportunities")
@@ -29,8 +32,19 @@ export const OppContainer = () => {
         setView(viewSelection)
     } 
 
+    const toggleDetailModal = (currentOpp) => {
+        setSelectedOpp(currentOpp)
+        detailModalClass === "modal-show" ? setDetailModalClass("modal-hide") : setDetailModalClass("modal-show")
+        console.log(setDetailModalClass)
+    }
+
+    const toggleModal = () => {
+        modalClass === "modal-show" ? setModalClass("modal-hide") : setModalClass("modal-show")
+        console.log(modalClass)
+    }
+
     const oppTiles = (
-        opportunities.map(opportunity => <OppTile opportunity={opportunity} key={opportunity.id}/>)
+        opportunities.map(opportunity => <OppTile opportunity={opportunity} key={opportunity.id} toggleDetailModal={toggleDetailModal} setSelectedOpp={setSelectedOpp}/>)
     )
 
     const oppRows = (
@@ -47,10 +61,8 @@ export const OppContainer = () => {
         setOpportunities(opportunityData.sort((opp1, opp2) => opp1[sortSelection] > opp2[sortSelection] ? 1 : opp1[sortSelection] < opp2[sortSelection] ? -1 : 0))
     }
 
-    const toggleModal = () => {
-        modalClass === "modal-show" ? setModalClass("modal-hide") : setModalClass("modal-show")
-        console.log(modalClass)
-    }
+
+
 
     const addOpportunity = (newOpp) => {
         setOpportunities([...opportunities, newOpp])
@@ -65,6 +77,7 @@ export const OppContainer = () => {
                     <NewTile toggleModal={toggleModal}/>
                 </div>
                 <OppModal modalClass={modalClass} toggleModal={toggleModal} addOpportunity={addOpportunity}/>
+                <OppDetailsModal modalClass={detailModalClass} toggleModal={toggleDetailModal} selectedOpp={selectedOpp}/>
                 <AnalyticsDashboard opportunities={opportunities}/>
             </>
         )
