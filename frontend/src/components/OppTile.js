@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/OppTile.css"
 
-export const OppTile = ({ opportunity, toggleDetailModal, setSelectedOpp }) => {
+export const OppTile = ({ opportunity, toggleDetailModal }) => {
     return(
         <div className="opp-tile">
             <div className="opp-card-header">

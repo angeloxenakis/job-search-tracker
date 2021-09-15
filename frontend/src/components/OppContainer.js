@@ -18,6 +18,7 @@ export const OppContainer = () => {
     const [ modalClass, setModalClass ] = useState("modal-hide")
     const [ detailModalClass, setDetailModalClass ] = useState("modal-hide")
     const [ selectedOpp, setSelectedOpp ] = useState({})
+    
 
     useEffect(() => {
         fetch("http://localhost:3000/opportunities")
@@ -33,9 +34,9 @@ export const OppContainer = () => {
     } 
 
     const toggleDetailModal = (currentOpp) => {
+        console.log(currentOpp)
         setSelectedOpp(currentOpp)
         detailModalClass === "modal-show" ? setDetailModalClass("modal-hide") : setDetailModalClass("modal-show")
-        console.log(setDetailModalClass)
     }
 
     const toggleModal = () => {

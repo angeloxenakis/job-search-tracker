@@ -17,11 +17,11 @@ export const OppHeader = ({ toggleView, filterOpps, sortOpps, toggleModal }) => 
                 <h2>Opportunities</h2>
                 <div className="opp-header-tools">
                     <div className="opp-header-search">
-                        Search: <input type="text" placeholder="Title, Company, or Location" onChange={(e) => handleSearchInput(e)}></input>
+                        Search: <input type="text" placeholder="Title, Company, or Location" className="search" onChange={(e) => handleSearchInput(e)}></input>
                     </div>
                     <div className="opp-header-sort">
                         Sort by:
-                        <select onChange={(e) => handleSortSelection(e)}>
+                        <select className="sort"onChange={(e) => handleSortSelection(e)}>
                             <option value="job_title">Job Title</option>
                             <option value="company">Company</option>
                             <option value="salary">Salary</option>
@@ -31,11 +31,11 @@ export const OppHeader = ({ toggleView, filterOpps, sortOpps, toggleModal }) => 
                             <option value="last_contact">Date Applied</option>
                         </select>
                     </div>
-                    <div>
+                    <div className="opp-header-view">
                         View: <span onClick={() => toggleView("tile")}>Tile</span> | <span onClick={() => toggleView("list")}>List</span>
                     </div>
-                    <div>
-                        Add <button className="opp-header-add" onClick={toggleModal}>+</button>
+                    <div className="opp-header-add">
+                        Add: <button className="opp-header-add-btn" onClick={toggleModal}>+</button>
                     </div>
 
                 </div>
