@@ -8,6 +8,12 @@
     box-shadow: 4px 4px 8px rgb(20, 20, 20);
     border: 1px solid rgb(88, 88, 88);
     border-radius: 8px;
+    text-align: center;
+}
+
+.row-block {
+    border-right: 1px solid rgb(88, 88, 88);
+    width: 180px;
 }
 
 
