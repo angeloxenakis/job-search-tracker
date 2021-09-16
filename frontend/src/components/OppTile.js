@@ -1,11 +1,16 @@
 import React from "react";
 import "../styles/OppTile.css"
 
-export const OppTile = ({ opportunity, toggleDetailModal }) => {
+export const OppTile = ({ opportunity, toggleDetailModal, setFormValues }) => {
+
+    const handleDetailClick = () => {
+        toggleDetailModal(opportunity)
+    }
+
     return(
         <div className="opp-tile">
             <div className="opp-card-header">
-                <p><span>Edit</span><span>|</span><span onClick={() => toggleDetailModal(opportunity)}>Details</span></p>
+                <p><span>Edit</span><span>|</span><span onClick={handleDetailClick}>Details</span></p>
             </div>
             <hr></hr>
             <div className="opp-card-hero">
