@@ -18,6 +18,17 @@ export const OppContainer = () => {
     const [ modalClass, setModalClass ] = useState("modal-hide")
     const [ detailModalClass, setDetailModalClass ] = useState("modal-hide")
     const [ selectedOpp, setSelectedOpp ] = useState({})
+    const [ formValues, setFormValues ] = useState({ 
+        id: "",
+        job_title: "", 
+        company: "", 
+        description: "", 
+        salary: "", 
+        location: "", 
+        interest_level: "", 
+        date_applied: "", 
+        last_contact: ""
+    })
     
 
     useEffect(() => {
@@ -34,8 +45,7 @@ export const OppContainer = () => {
     } 
 
     const toggleDetailModal = (currentOpp) => {
-        console.log(currentOpp)
-        setSelectedOpp(currentOpp)
+        setFormValues(currentOpp)
         detailModalClass === "modal-show" ? setDetailModalClass("modal-hide") : setDetailModalClass("modal-show")
     }
 
@@ -45,7 +55,7 @@ export const OppContainer = () => {
     }
 
     const oppTiles = (
-        opportunities.map(opportunity => <OppTile opportunity={opportunity} key={opportunity.id} toggleDetailModal={toggleDetailModal} setSelectedOpp={setSelectedOpp}/>)
+        opportunities.map(opportunity => <OppTile opportunity={opportunity} key={opportunity.id} toggleDetailModal={toggleDetailModal} setFormValues={setFormValues} setSelectedOpp={setSelectedOpp}/>)
     )
 
     const oppRows = (
@@ -62,11 +72,13 @@ export const OppContainer = () => {
         setOpportunities(opportunityData.sort((opp1, opp2) => opp1[sortSelection] > opp2[sortSelection] ? 1 : opp1[sortSelection] < opp2[sortSelection] ? -1 : 0))
     }
 
-
-
-
     const addOpportunity = (newOpp) => {
         setOpportunities([...opportunities, newOpp])
+    }
+
+    const updateOpportunity = (updatedOpp) => {
+        setOpportunities(opportunities.map(opp => opp.id === updatedOpp.id ? opp = updatedOpp : opp))
+        toggleDetailModal(updatedOpp)
     }
 
     if (view === "tile") {
@@ -78,7 +90,7 @@ export const OppContainer = () => {
                     <NewTile toggleModal={toggleModal}/>
                 </div>
                 <OppModal modalClass={modalClass} toggleModal={toggleModal} addOpportunity={addOpportunity}/>
-                <OppDetailsModal modalClass={detailModalClass} toggleModal={toggleDetailModal} selectedOpp={selectedOpp}/>
+                <OppDetailsModal modalClass={detailModalClass} toggleModal={toggleDetailModal} selectedOpp={selectedOpp} formValues={formValues} setFormValues={setFormValues} updateOpportunity={updateOpportunity}/>
                 <AnalyticsDashboard opportunities={opportunities}/>
             </>
         )

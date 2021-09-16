@@ -1,17 +1,8 @@
 import React, { useState, useEffect } from "react"
 
-export const OppDetailsModal = ({modalClass, toggleModal, selectedOpp}) => {
+export const OppDetailsModal = ({modalClass, toggleModal, updateOpportunity, setFormValues, formValues}) => {
 
-    const [ formValues, setFormValues ] = useState({ 
-        job_title: selectedOpp.job_title, 
-        company: selectedOpp.company, 
-        description: selectedOpp.description, 
-        salary: selectedOpp.salary, 
-        location: selectedOpp.location, 
-        interest_level: selectedOpp.interest_level, 
-        date_applied: selectedOpp.date_applied, 
-        last_contact: selectedOpp.last_contact
-    })
+
 
     const handleFormInput = (e) => {
         setFormValues({...formValues, [e.target.name]: e.target.value})
@@ -19,15 +10,16 @@ export const OppDetailsModal = ({modalClass, toggleModal, selectedOpp}) => {
     }
 
     const handleSubmit = () => {
-        fetch(`http://localhost:3000/opportunities/${selectedOpp.id}`, {
+        console.log(formValues)
+        fetch(`http://localhost:3000/opportunities/${formValues.id}`, {
             method: "PATCH",
             headers: {
-                "Content-Type": "application.json"
+                "Content-Type": "application/json"
             },
             body: JSON.stringify(formValues)
         })
         .then(res => res.json())
-        .then(udpatedOpp => console.log(udpatedOpp))
+        .then(udpatedOpp => updateOpportunity(udpatedOpp))
     }
 
     return(
