@@ -12,8 +12,9 @@ import "../styles/OppContainer.css"
 import "../styles/OppModal.css"
 
 export const OppContainer = () => {
-    const [ opportunityData, setOpportunityData ] = useState(oppData)
-    const [ opportunities, setOpportunities ] = useState(oppData)
+    const [ opportunities, setOpportunities ] = useState([])
+    const [ searchTerm, setSearchTerm ] = useState("")
+    const [ sortValue, setSortValue ] = ("created_at")
     const [ view, setView ] = useState("tile")
     const [ modalClass, setModalClass ] = useState("modal-hide")
     const [ detailModalClass, setDetailModalClass ] = useState("modal-hide")
@@ -24,7 +25,6 @@ export const OppContainer = () => {
         fetch("http://localhost:3000/opportunities")
         .then(res => res.json())
         .then(opps => {
-            setOpportunityData(opps)
             setOpportunities(opps)
         })
     }, [])
@@ -43,28 +43,22 @@ export const OppContainer = () => {
         console.log(modalClass)
     }
 
-    const oppTiles = (
-        <div className="tile-view">
-            {opportunities.map(opportunity => <OppTile key={opportunity.id} opportunity={opportunity}  toggleDetailModal={toggleDetailModal}/>)}
-            <NewTile toggleModal={toggleModal}/>
-        </div>
-    )
+    const renderOppotunities = () => {
+        const sortedOpps = opportunities.sort((opp1, opp2) => opp1[sortValue] > opp2[sortValue] ? 1 : opp1[sortValue] < opp2[sortValue] ? -1 : 0)
+        const filteredOpps = sortedOpps.filter(opp => opp.job_title.toLowerCase().includes(searchTerm.toLowerCase()) || opp.company.toLowerCase().includes(searchTerm.toLowerCase()) || opp.location.toLowerCase().includes(searchTerm.toLowerCase()))
 
-    const oppRows = (
-        <div className="list-view">
-            {opportunities.map(opportunity => <OppRow key={opportunity.id} opportunity={opportunity} toggleDetailModal={toggleDetailModal}/>)}
-            <NewRow toggleModal={toggleModal}/>
-        </div>
-    )
-
-    const filterOpps = (searchTerm) => {
-        console.log(searchTerm)
-        setOpportunities(opportunityData.filter(opp => opp.job_title.toLowerCase().includes(searchTerm.toLowerCase())))
-    }
-
-    const sortOpps = (sortSelection) => {
-        console.log(opportunityData.sort((opp1, opp2) => opp1[sortSelection] > opp2[sortSelection] ? 1 : opp1[sortSelection] < opp2[sortSelection] ? -1 : 0))
-        setOpportunities(opportunityData.sort((opp1, opp2) => opp1[sortSelection] > opp2[sortSelection] ? 1 : opp1[sortSelection] < opp2[sortSelection] ? -1 : 0))
+        if (view === "tile") {
+            return <div className="tile-view">
+                {filteredOpps.map(opportunity => <OppTile key={opportunity.id} opportunity={opportunity}  toggleDetailModal={toggleDetailModal}/>)}
+                <NewTile toggleModal={toggleModal}/>
+            </div>  
+        } else if (view === "list") {
+            return <div className="list-view">
+                {opportunities.map(opportunity => <OppRow key={opportunity.id} opportunity={opportunity} toggleDetailModal={toggleDetailModal}/>)}
+                <NewRow toggleModal={toggleModal}/>
+            </div>
+        }
+ 
     }
 
     const addOpportunity = (newOpp) => {
@@ -76,25 +70,14 @@ export const OppContainer = () => {
         toggleDetailModal(updatedOpp)
     }
 
-    if (view === "tile") {
-        return(
-            <>
-                <OppHeader toggleView={toggleView} filterOpps={filterOpps} sortOpps={sortOpps} toggleModal={toggleModal}/>
-                {oppTiles}
-                <OppModal modalClass={modalClass} toggleModal={toggleModal} addOpportunity={addOpportunity}/>
-                <OppDetailsModal modalClass={detailModalClass} toggleModal={toggleDetailModal} formValues={formValues} setFormValues={setFormValues} updateOpportunity={updateOpportunity}/>
-                <AnalyticsDashboard opportunities={opportunities}/>
-            </>
-        )
-    } else if (view === "list") {
-        return(
-            <>
-                <OppHeader toggleView={toggleView} filterOpps={filterOpps} toggleModal={toggleModal}/>
-                {oppRows}
-                <OppModal modalClass={modalClass} toggleModal={toggleModal} addOpportunity={addOpportunity}/>
-                <OppDetailsModal modalClass={detailModalClass} toggleModal={toggleDetailModal} formValues={formValues} setFormValues={setFormValues} updateOpportunity={updateOpportunity}/>
-                <AnalyticsDashboard opportunities={opportunities}/>
-            </>
-        )
-    }
+    return(
+        <>
+            <OppHeader toggleView={toggleView} toggleModal={toggleModal} setSearchTerm={setSearchTerm}/>
+            {renderOppotunities()}
+            <OppModal modalClass={modalClass} toggleModal={toggleModal} addOpportunity={addOpportunity}/>
+            <OppDetailsModal modalClass={detailModalClass} toggleModal={toggleDetailModal} formValues={formValues} setFormValues={setFormValues} updateOpportunity={updateOpportunity}/>
+            <AnalyticsDashboard opportunities={opportunities}/>
+        </>
+    )
+
 }
