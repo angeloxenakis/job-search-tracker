@@ -11,8 +11,16 @@
     text-align: center;
 }
 
+.opp-row:hover {
+    cursor: pointer;
+}
+
 .row-block {
     border-right: 1px solid rgb(88, 88, 88);
+    width: 180px;
+}
+
+.row-block-end {
     width: 180px;
 }
 
