@@ -32,7 +32,7 @@ export const OppHeader = ({ toggleView, filterOpps, sortOpps, toggleModal }) => 
                         </select>
                     </div>
                     <div className="opp-header-view">
-                        View: <span onClick={() => toggleView("tile")}>Tile</span> | <span onClick={() => toggleView("list")}>List</span>
+                        View: <span class="view-option" onClick={() => toggleView("tile")}>Tile</span> | <span class="view-option" onClick={() => toggleView("list")}>List</span>
                     </div>
                     <div className="opp-header-add">
                         Add: <button className="opp-header-add-btn" onClick={toggleModal}>+</button>

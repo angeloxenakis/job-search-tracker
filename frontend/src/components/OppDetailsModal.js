@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 
 export const OppDetailsModal = ({modalClass, toggleModal, updateOpportunity, setFormValues, formValues}) => {
-
-
-
     const handleFormInput = (e) => {
         setFormValues({...formValues, [e.target.name]: e.target.value})
         console.log(formValues)
@@ -21,7 +18,7 @@ export const OppDetailsModal = ({modalClass, toggleModal, updateOpportunity, set
         .then(res => res.json())
         .then(udpatedOpp => updateOpportunity(udpatedOpp))
     }
-
+    
     return(
         <>
             <div className={modalClass}>

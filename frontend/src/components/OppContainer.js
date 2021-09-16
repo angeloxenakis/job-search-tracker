@@ -17,18 +17,7 @@ export const OppContainer = () => {
     const [ view, setView ] = useState("tile")
     const [ modalClass, setModalClass ] = useState("modal-hide")
     const [ detailModalClass, setDetailModalClass ] = useState("modal-hide")
-    const [ selectedOpp, setSelectedOpp ] = useState({})
-    const [ formValues, setFormValues ] = useState({ 
-        id: "",
-        job_title: "", 
-        company: "", 
-        description: "", 
-        salary: "", 
-        location: "", 
-        interest_level: "", 
-        date_applied: "", 
-        last_contact: ""
-    })
+    const [ formValues, setFormValues ] = useState({})
     
 
     useEffect(() => {
@@ -55,11 +44,17 @@ export const OppContainer = () => {
     }
 
     const oppTiles = (
-        opportunities.map(opportunity => <OppTile opportunity={opportunity} key={opportunity.id} toggleDetailModal={toggleDetailModal} setFormValues={setFormValues} setSelectedOpp={setSelectedOpp}/>)
+        <div className="tile-view">
+            {opportunities.map(opportunity => <OppTile key={opportunity.id} opportunity={opportunity}  toggleDetailModal={toggleDetailModal}/>)}
+            <NewTile toggleModal={toggleModal}/>
+        </div>
     )
 
     const oppRows = (
-        opportunities.map(opportunity => <OppRow opportunity={opportunity} key={opportunity.id}/>)
+        <div className="list-view">
+            {opportunities.map(opportunity => <OppRow key={opportunity.id} opportunity={opportunity} toggleDetailModal={toggleDetailModal}/>)}
+            <NewRow toggleModal={toggleModal}/>
+        </div>
     )
 
     const filterOpps = (searchTerm) => {
@@ -85,12 +80,9 @@ export const OppContainer = () => {
         return(
             <>
                 <OppHeader toggleView={toggleView} filterOpps={filterOpps} sortOpps={sortOpps} toggleModal={toggleModal}/>
-                <div className="tile-view">
-                    {oppTiles}
-                    <NewTile toggleModal={toggleModal}/>
-                </div>
+                {oppTiles}
                 <OppModal modalClass={modalClass} toggleModal={toggleModal} addOpportunity={addOpportunity}/>
-                <OppDetailsModal modalClass={detailModalClass} toggleModal={toggleDetailModal} selectedOpp={selectedOpp} formValues={formValues} setFormValues={setFormValues} updateOpportunity={updateOpportunity}/>
+                <OppDetailsModal modalClass={detailModalClass} toggleModal={toggleDetailModal} formValues={formValues} setFormValues={setFormValues} updateOpportunity={updateOpportunity}/>
                 <AnalyticsDashboard opportunities={opportunities}/>
             </>
         )
@@ -98,11 +90,9 @@ export const OppContainer = () => {
         return(
             <>
                 <OppHeader toggleView={toggleView} filterOpps={filterOpps} toggleModal={toggleModal}/>
-                <div className="list-view">
-                    {oppRows}
-                    <NewRow toggleModal={toggleModal}/>
-                </div>
-                <OppModal modalClass={modalClass} toggleModal={toggleModal}/>
+                {oppRows}
+                <OppModal modalClass={modalClass} toggleModal={toggleModal} addOpportunity={addOpportunity}/>
+                <OppDetailsModal modalClass={detailModalClass} toggleModal={toggleDetailModal} formValues={formValues} setFormValues={setFormValues} updateOpportunity={updateOpportunity}/>
                 <AnalyticsDashboard opportunities={opportunities}/>
             </>
         )
