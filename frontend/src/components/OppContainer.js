@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import { oppData } from "./OppData"
 import { OppHeader } from "./OppHeader"
 import { OppTile } from "./OppTile"
 import { NewTile } from "./NewTile"
@@ -14,7 +13,7 @@ import "../styles/OppModal.css"
 export const OppContainer = () => {
     const [ opportunities, setOpportunities ] = useState([])
     const [ searchTerm, setSearchTerm ] = useState("")
-    const [ sortValue, setSortValue ] = ("created_at")
+    const [ sortValue, setSortValue ] = useState("created_at")
     const [ view, setView ] = useState("tile")
     const [ modalClass, setModalClass ] = useState("modal-hide")
     const [ detailModalClass, setDetailModalClass ] = useState("modal-hide")
@@ -72,7 +71,7 @@ export const OppContainer = () => {
 
     return(
         <>
-            <OppHeader toggleView={toggleView} toggleModal={toggleModal} setSearchTerm={setSearchTerm}/>
+            <OppHeader toggleView={toggleView} toggleModal={toggleModal} setSearchTerm={setSearchTerm} setSortValue={setSortValue}/>
             {renderOppotunities()}
             <OppModal modalClass={modalClass} toggleModal={toggleModal} addOpportunity={addOpportunity}/>
             <OppDetailsModal modalClass={detailModalClass} toggleModal={toggleDetailModal} formValues={formValues} setFormValues={setFormValues} updateOpportunity={updateOpportunity}/>

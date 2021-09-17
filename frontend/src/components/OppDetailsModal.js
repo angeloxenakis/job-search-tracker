@@ -18,13 +18,13 @@ export const OppDetailsModal = ({modalClass, toggleModal, updateOpportunity, set
         .then(res => res.json())
         .then(udpatedOpp => updateOpportunity(udpatedOpp))
     }
-    
+
     return(
         <>
             <div className={modalClass}>
             <div className="modal-content">
                     <div className="modal-header">
-                        <h2>Edit Opportunity</h2>
+                        <h2>Opportunity Details</h2>
                         <span className="close" onClick={toggleModal}>&times;</span>
                     </div>
                     <div className="modal-body">
