@@ -46,10 +46,7 @@ p {
 
 .opp-card-hero {
     padding: 16px 0px 16px 0px;
-}
-
-.opp-card-hero p {
-    text-align: right;
+    height: 56px;
 }
 
 .opp-card-body {
@@ -66,10 +63,12 @@ p {
     padding: 16px;
     display: flex;
     justify-content: space-between;
+    text-align: center;
 }
 
 .opp-card-footer {
     padding: 16px;
     display: flex;
     justify-content: space-around;
+    text-align: center;
 }

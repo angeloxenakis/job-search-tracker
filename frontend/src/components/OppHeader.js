@@ -1,7 +1,7 @@
 import React from "react"
 import "../styles/OppHeader.css"
 
-export const OppHeader = ({ toggleView, toggleModal, setSearchTerm }) => {
+export const OppHeader = ({ toggleView, toggleModal, setSearchTerm, setSortValue }) => {
 
     const handleSearchInput = (e) => {
         setSearchTerm(e.target.value)
@@ -18,14 +18,15 @@ export const OppHeader = ({ toggleView, toggleModal, setSearchTerm }) => {
                     </div>
                     <div className="opp-header-sort">
                         Sort by:
-                        <select className="sort"onChange={(e) => console.log(e)}>
+                        <select className="sort"onChange={(e) => setSortValue(e.target.value)}>
+                            <option value="created_at">Date Created</option>
                             <option value="job_title">Job Title</option>
                             <option value="company">Company</option>
                             <option value="salary">Salary</option>
                             <option value="location">Location</option>
                             <option value="interest_level">Interest</option>
                             <option value="date_applied">Date Applied</option>
-                            <option value="last_contact">Date Applied</option>
+                            <option value="last_contact">Last Contact</option>
                         </select>
                     </div>
                     <div className="opp-header-view">

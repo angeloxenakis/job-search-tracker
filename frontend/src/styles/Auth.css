@@ -1,0 +1,86 @@
+.auth-page {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.auth-container {
+    display: flex;
+    width: 900px;
+    margin: auto;
+    justify-content: center;
+    color: whitesmoke;
+    background-color: rgb(26, 26, 26);
+    border: 1px solid rgb(88, 88, 88);
+    border-radius: 16px;
+    padding: 40px;
+}
+
+h1 {
+    margin-bottom: 8px;
+}
+
+.login-caption {
+    width: 228px;
+    word-wrap: normal;
+    margin-bottom: 8px;
+}
+
+.login-panel {
+    /* border: white 1px solid; */
+    width: 50%;
+    border-right: 1px solid rgb(88, 88, 88);
+}
+
+.signup-panel {
+    /* border: white 1px solid; */
+    width: 50%
+}
+
+.login-form {
+    /* border: white 1px solid; */
+    margin: auto;
+    width: fit-content;
+}
+
+.signup-form {
+    /* border: white 1px solid; */
+    margin: auto;
+    width: fit-content;
+}
+
+input {
+    width: 220px;
+    height: 32px;
+    padding: 6px;
+    font-size: 16px;
+    color: whitesmoke;
+    background-color: rgb(19, 19, 19);
+    border: 1px solid whitesmoke;
+    border-radius: 8px;
+    margin: 12px 0px 12px 0px;
+}
+
+.login-btn {
+    background-color: rgb(58, 96, 202);
+    width: 234px;
+    height: 40px;
+    font-size: 16px;
+    color: whitesmoke;
+    border: none;
+    border-radius: 8px;
+    margin: 8px 0px 8px 0px;
+    font-weight: bold;
+}
+
+.signup-btn {
+    background-color: rgb(68, 165, 68);
+    width: 234px;
+    height: 40px;
+    font-size: 16px;
+    color: whitesmoke;
+    border: none;
+    border-radius: 8px;
+    margin: 8px 0px 8px 0px;
+    font-weight: bold;
+}
