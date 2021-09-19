@@ -6,6 +6,7 @@ import { OppRow } from "./OppRow"
 import { NewRow } from "./NewRow"
 import { OppModal } from "./OppModal"
 import { OppDetailsModal } from "./OppDetailsModal"
+import { Contacts } from "./Contacts"
 import { AnalyticsDashboard } from "./AnalyticsDashboard"
 import "../styles/OppContainer.css"
 import "../styles/OppModal.css"
@@ -75,7 +76,11 @@ export const OppContainer = () => {
             {renderOppotunities()}
             <OppModal modalClass={modalClass} toggleModal={toggleModal} addOpportunity={addOpportunity}/>
             <OppDetailsModal modalClass={detailModalClass} toggleModal={toggleDetailModal} formValues={formValues} setFormValues={setFormValues} updateOpportunity={updateOpportunity}/>
-            <AnalyticsDashboard opportunities={opportunities}/>
+            <div className="app-bottom-panel">
+                <Contacts />
+                <AnalyticsDashboard opportunities={opportunities}/>
+            </div>
+
         </>
     )
 

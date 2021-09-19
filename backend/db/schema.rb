@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2021_09_17_035816) do
     t.string "email"
     t.string "phone"
     t.string "linked_in"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

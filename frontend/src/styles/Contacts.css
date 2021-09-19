@@ -1,0 +1,17 @@
+.contacts-container {
+    width: 30vw;
+    border: 1px solid rgb(88, 88, 88);
+    background-color: rgb(36, 36, 36);
+}
+
+.contacts-header {
+    color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 24px 16px 24px;
+    align-items: center;
+    border-top: 1px solid rgb(88, 88, 88);
+    border-bottom: 1px solid rgb(88, 88, 88);
+    border-right: 1px solid rgb(88, 88, 88);
+    background-color: rgb(26, 26, 26);
+}
