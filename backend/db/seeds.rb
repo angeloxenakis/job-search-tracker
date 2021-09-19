@@ -1,5 +1,6 @@
 User.destroy_all
 Opportunity.destroy_all
+Contact.destroy_all
 
 User.create(username: "AngeloXenakis", password: "123")
 
@@ -51,3 +52,35 @@ opportunities = [
 ]
 
 opportunities.each { | opportunity | Opportunity.create(opportunity) }
+
+contacts = [
+    {
+        first_name: "Jennifer",
+        last_name: "Jennings",
+        company: "Google",
+        email: "jjennings@gmail.com",
+        phone: 5556737256,
+        linked_in: "www.linkedin.com",
+        user_id: User.first.id
+    },
+    {
+        first_name: "Bobby",
+        last_name: "Roberts",
+        company: "Google",
+        email: "broberts@gmail.com",
+        phone: 5558432764,
+        linked_in: "www.linkedin.com",
+        user_id: User.first.id
+    },
+    {
+        first_name: "Sherry",
+        last_name: "Sharon",
+        company: "Google",
+        email: "ssharon@gmail.com",
+        phone: 5558737763,
+        linked_in: "www.linkedin.com",
+        user_id: User.first.id
+    }
+]
+
+contacts.each { | contact | Contact.create(contact) }
