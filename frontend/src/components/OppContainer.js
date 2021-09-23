@@ -24,9 +24,7 @@ export const OppContainer = () => {
     useEffect(() => {
         fetch("http://localhost:3000/opportunities")
         .then(res => res.json())
-        .then(opps => {
-            setOpportunities(opps)
-        })
+        .then(opps => setOpportunities(opps))
     }, [])
 
     const toggleView = (viewSelection) => {
