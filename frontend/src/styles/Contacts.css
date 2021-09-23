@@ -3,6 +3,7 @@
     border-right: 1px solid rgb(88, 88, 88);
     background-color: rgb(36, 36, 36);
     background-color: rgb(15, 15, 15);
+    color: whitesmoke;
 }
 
 .contacts-header {
@@ -53,6 +54,10 @@ th {
     border: 1px solid rgb(88, 88, 88);
     padding: 8px;
     text-align: left;
+}
+
+tr:hover {
+    cursor: pointer;
 }
 
 td {
