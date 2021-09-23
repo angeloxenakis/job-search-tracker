@@ -1,7 +1,6 @@
 .contacts-component {
     width: 50vw;
     border-right: 1px solid rgb(88, 88, 88);
-    background-color: rgb(36, 36, 36);
     background-color: rgb(15, 15, 15);
     color: whitesmoke;
 }
@@ -31,16 +30,53 @@
     width: 220px;
 }
 
+.contact-list-header {
+    display: flex;
+    justify-content: space-between;
+}
+
 .contacts-container {
     padding: 16px;
+}
+
+.contact-table-header {
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border: 1px solid rgb(88, 88, 88);
+    border-radius: 4px 4px 0px 0px;
+    background-color: rgb(15, 15, 15);
+}
+
+.name-cell {
+    width: 24%;
+    border-right: 1px solid rgb(88, 88, 88);
+    padding: 16px 8px 16px 8px;
+}
+
+.co-cell {
+    width: 24%;
+    border-right: 1px solid rgb(88, 88, 88);
+    padding: 16px 8px 16px 8px;
+}
+
+.date-cell {
+    width: 18%;
+    padding: 16px 8px 16px 8px;
 }
 
 .contacts-table {
     border: 1px solid rgb(88, 88, 88);
     padding: 8px;
     border-radius: 8px;
-    height: 260px;
+    height: 480px;
+    background-color: rgb(36, 36, 36);
+}
+
+.contact-row-container {
     overflow: scroll;
+    height: 360px;
 }
 
 table {
@@ -48,6 +84,7 @@ table {
     border-collapse: collapse;
     width: 100%;
     padding: 8px;
+    background-color: black;
 }
 
 th {
@@ -63,4 +100,16 @@ tr:hover {
 td {
     border: 1px solid rgb(88, 88, 88);
     padding: 8px;
+}
+
+.contact-row {
+    display: flex;
+    border: 1px solid rgb(88, 88, 88);
+    border-radius: 4px;
+    margin: 8px 0px 8px 0px;
+    background-color: rgb(15, 15, 15);
+}
+
+.contact-row:hover {
+    cursor:pointer
 }

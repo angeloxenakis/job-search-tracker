@@ -23,23 +23,43 @@ export const Contacts = () => {
     }
 
     const renderContactRows = contacts.sort((con1, con2) => con1[contactSortValue] > con2[contactSortValue] ? 1 : con1[contactSortValue] < con2[contactSortValue] ? -1 : 0).map(contact => {
-        return <tr onClick={() => toggleContactView(contact)}>
-            <td>{contact.first_name}</td>
-            <td>{contact.last_name}</td>
-            <td>{contact.company}</td>
-            <td>{contact.last_contact}</td>
-        </tr>
+        return <div className="contact-row" onClick={() => toggleContactView(contact)}>
+            <div className="name-cell">{contact.first_name}</div>
+            <div className="name-cell">{contact.last_name}</div>
+            <div className="co-cell">{contact.company}</div>
+            <div className="date-cell">{contact.last_contact}</div>
+        </div>
     })
 
     const displayContactList = (
         <div className="contacts-table">
-            <table>
-                <th>First</th>
-                <th>Last</th>
-                <th>Company</th>
-                <th>Last Contact</th>
+            <div className="contact-list-header">
+                <h3>Contacts List</h3>
+                <div className="contacts-tools">
+                    <div className="contact-sort">
+                        Sort by:
+                        <select className="sort" onChange={(e) => setContactSortValue(e.target.value)}>
+                            <option value="first_name">First Name</option>
+                            <option value="last_name">Last Name</option>
+                            <option value="company">Company</option>
+                            <option value="last_contact">Last Contact</option>
+                        </select>
+                    </div>
+                    <div className="opp-header-add">
+                        Add: <button className="opp-header-add-btn">+</button>
+                    </div>
+                </div>
+            </div>
+            <div className="contact-table-header">
+                <div className="name-cell">First</div>
+                <div className="name-cell">Last</div>
+                <div className="co-cell">Company</div>
+                <div className="date-cell">Last Contact</div>
+            </div>
+            <div className="contact-row-container">
                 {renderContactRows}
-            </table>
+            </div>
+
         </div>
     )
 
@@ -58,20 +78,6 @@ export const Contacts = () => {
         <div className="contacts-component">
             <div className="contacts-header">
                 <h2>Contacts</h2>
-                <div className="contacts-tools">
-                    <div className="contact-sort">
-                        Sort by:
-                        <select className="sort" onChange={(e) => setContactSortValue(e.target.value)}>
-                            <option value="first_name">First Name</option>
-                            <option value="last_name">Last Name</option>
-                            <option value="company">Company</option>
-                            <option value="last_contact">Last Contact</option>
-                        </select>
-                    </div>
-                    <div className="opp-header-add">
-                        Add: <button className="opp-header-add-btn">+</button>
-                    </div>
-                </div>
             </div>
             <div className="contacts-container">
                 {contactView === "list" ? displayContactList : displayContactDetails}
