@@ -1,7 +1,8 @@
 .contacts-container {
-    width: 30vw;
-    border: 1px solid rgb(88, 88, 88);
+    width: 50vw;
+    border-right: 1px solid rgb(88, 88, 88);
     background-color: rgb(36, 36, 36);
+    background-color: rgb(15, 15, 15);
 }
 
 .contacts-header {
@@ -12,6 +13,27 @@
     align-items: center;
     border-top: 1px solid rgb(88, 88, 88);
     border-bottom: 1px solid rgb(88, 88, 88);
-    border-right: 1px solid rgb(88, 88, 88);
+    /* border-right: 1px solid rgb(88, 88, 88); */
     background-color: rgb(26, 26, 26);
+}
+
+.contacts-table {
+    /* border: 1px solid whitesmoke;
+    width: 100%;
+    hieght: 100% */
+}
+
+table {
+    color: whitesmoke;
+    border-collapse: collapse;
+    width: 100%;
+    padding: 8px;
+}
+
+th {
+    border: 1px solid whitesmoke;
+}
+
+td {
+    border: 1px solid whitesmoke;
 }
