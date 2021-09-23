@@ -61,26 +61,109 @@ contacts = [
         email: "jjennings@gmail.com",
         phone: 5556737256,
         linked_in: "www.linkedin.com",
-        user_id: User.first.id
+        user_id: User.first.id,
+        last_contact: "09/23/2021"
     },
     {
         first_name: "Bobby",
         last_name: "Roberts",
-        company: "Google",
+        company: "Apple",
         email: "broberts@gmail.com",
         phone: 5558432764,
         linked_in: "www.linkedin.com",
-        user_id: User.first.id
+        user_id: User.first.id,
+        last_contact: "09/23/2021"
     },
     {
         first_name: "Sherry",
         last_name: "Sharon",
-        company: "Google",
+        company: "Apple",
         email: "ssharon@gmail.com",
         phone: 5558737763,
         linked_in: "www.linkedin.com",
-        user_id: User.first.id
-    }
+        user_id: User.first.id,
+        last_contact: "09/23/2021"
+    },
+    {
+        first_name: "Billy",
+        last_name: "Williams",
+        company: "Facebook",
+        email: "bwilliams@gmail.com",
+        phone: 5558737763,
+        linked_in: "www.linkedin.com",
+        user_id: User.first.id,
+        last_contact: "09/18/2021"
+    },
+    {
+        first_name: "Sam",
+        last_name: "Samuels",
+        company: "Google",
+        email: "ssamuels@gmail.com",
+        phone: 5558737763,
+        linked_in: "www.linkedin.com",
+        user_id: User.first.id,
+        last_contact: "09/05/2021"
+    },
+    {
+        first_name: "Jessica",
+        last_name: "Jessup",
+        company: "Google",
+        email: "jjessup@gmail.com",
+        phone: 5558737763,
+        linked_in: "www.linkedin.com",
+        user_id: User.first.id,
+        last_contact: "08/23/2021"
+    },
+    {
+        first_name: "Ted",
+        last_name: "Theodore",
+        company: "Netflix",
+        email: "ttheo@gmail.com",
+        phone: 5558737763,
+        linked_in: "www.linkedin.com",
+        user_id: User.first.id,
+        last_contact: "09/18/2021"
+    },
+    {
+        first_name: "Wendy",
+        last_name: "Wenderson",
+        company: "Stripe",
+        email: "ww@gmail.com",
+        phone: 5558737763,
+        linked_in: "www.linkedin.com",
+        user_id: User.first.id,
+        last_contact: "09/12/2021"
+    },
+    {
+        first_name: "Steve",
+        last_name: "Stevenson",
+        company: "AWS",
+        email: "sstevenson@gmail.com",
+        phone: 5558737763,
+        linked_in: "www.linkedin.com",
+        user_id: User.first.id,
+        last_contact: "09/08/2021"
+    },
+    {
+        first_name: "Mary",
+        last_name: "Meredith",
+        company: "Facebook",
+        email: "mmer@gmail.com",
+        phone: 5558737763,
+        linked_in: "www.linkedin.com",
+        user_id: User.first.id,
+        last_contact: "09/13/2021"
+    },
+    {
+        first_name: "Alex",
+        last_name: "Alexanderson",
+        company: "Apple",
+        email: "aason@gmail.com",
+        phone: 5558737763,
+        linked_in: "www.linkedin.com",
+        user_id: User.first.id,
+        last_contact: "09/21/2021"
+    },
 ]
 
 contacts.each { | contact | Contact.create(contact) }

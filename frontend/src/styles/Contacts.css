@@ -1,4 +1,4 @@
-.contacts-container {
+.contacts-component {
     width: 50vw;
     border-right: 1px solid rgb(88, 88, 88);
     background-color: rgb(36, 36, 36);
@@ -17,10 +17,29 @@
     background-color: rgb(26, 26, 26);
 }
 
+.contacts-tools {
+    display: flex;
+    justify-content: space-between;
+    width: 340px;
+}
+
+.contact-sort {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 220px;
+}
+
+.contacts-container {
+    padding: 16px;
+}
+
 .contacts-table {
-    /* border: 1px solid whitesmoke;
-    width: 100%;
-    hieght: 100% */
+    border: 1px solid rgb(88, 88, 88);
+    padding: 8px;
+    border-radius: 8px;
+    height: 260px;
+    overflow: scroll;
 }
 
 table {
@@ -31,9 +50,12 @@ table {
 }
 
 th {
-    border: 1px solid whitesmoke;
+    border: 1px solid rgb(88, 88, 88);
+    padding: 8px;
+    text-align: left;
 }
 
 td {
-    border: 1px solid whitesmoke;
+    border: 1px solid rgb(88, 88, 88);
+    padding: 8px;
 }

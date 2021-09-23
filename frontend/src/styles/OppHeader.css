@@ -17,11 +17,6 @@ h4 {
     margin: 0px;
 }
 
-select {
-    margin: 0px 4px;
-    width: 160px;
-}
-
 .opp-header-tools {
     display: flex;
     justify-content: space-between;
