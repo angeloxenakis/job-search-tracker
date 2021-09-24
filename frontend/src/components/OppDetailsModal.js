@@ -17,6 +17,8 @@ export const OppDetailsModal = ({modalClass, toggleModal, updateOpportunity, set
         })
         .then(res => res.json())
         .then(udpatedOpp => updateOpportunity(udpatedOpp))
+
+        toggleModal()
     }
 
     return(

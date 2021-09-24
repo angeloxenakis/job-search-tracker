@@ -7,34 +7,29 @@ import { NewRow } from "./NewRow"
 import { OppModal } from "./OppModal"
 import { OppDetailsModal } from "./OppDetailsModal"
 import { Contacts } from "./Contacts"
-import { Footer } from "./Footer"
 import { AnalyticsDashboard } from "./AnalyticsDashboard"
 import "../styles/OppContainer.css"
 import "../styles/OppModal.css"
 
-export const OppContainer = () => {
-    const [ opportunities, setOpportunities ] = useState([])
+export const OppContainer = ({ opportunities, addOpportunity, updateOpportunity }) => {
     const [ searchTerm, setSearchTerm ] = useState("")
     const [ sortValue, setSortValue ] = useState("created_at")
     const [ view, setView ] = useState("tile")
     const [ modalClass, setModalClass ] = useState("modal-hide")
     const [ detailModalClass, setDetailModalClass ] = useState("modal-hide")
     const [ formValues, setFormValues ] = useState({})
-    
-
-    useEffect(() => {
-        fetch("http://localhost:3000/opportunities")
-        .then(res => res.json())
-        .then(opps => setOpportunities(opps))
-    }, [])
 
     const toggleView = (viewSelection) => {
         setView(viewSelection)
     } 
 
-    const toggleDetailModal = (currentOpp) => {
-        setFormValues(currentOpp)
+    const toggleDetailModal = () => {
         detailModalClass === "modal-show" ? setDetailModalClass("modal-hide") : setDetailModalClass("modal-show")
+    }
+
+    const selectOpp = (currentOpp) => {
+        setFormValues(currentOpp)
+        toggleDetailModal()
     }
 
     const toggleModal = () => {
@@ -48,24 +43,15 @@ export const OppContainer = () => {
 
         if (view === "tile") {
             return <div className="tile-view">
-                {filteredOpps.map(opportunity => <OppTile key={opportunity.id} opportunity={opportunity}  toggleDetailModal={toggleDetailModal}/>)}
+                {filteredOpps.map(opportunity => <OppTile key={opportunity.id} opportunity={opportunity}  selectOpp={selectOpp}/>)}
                 <NewTile toggleModal={toggleModal}/>
             </div>  
         } else if (view === "list") {
             return <div className="list-view">
-                {opportunities.map(opportunity => <OppRow key={opportunity.id} opportunity={opportunity} toggleDetailModal={toggleDetailModal}/>)}
+                {opportunities.map(opportunity => <OppRow key={opportunity.id} opportunity={opportunity} selectOpp={selectOpp}/>)}
                 <NewRow toggleModal={toggleModal}/>
             </div>
         }
-    }
-
-    const addOpportunity = (newOpp) => {
-        setOpportunities([...opportunities, newOpp])
-    }
-
-    const updateOpportunity = (updatedOpp) => {
-        setOpportunities(opportunities.map(opp => opp.id === updatedOpp.id ? opp = updatedOpp : opp))
-        toggleDetailModal(updatedOpp)
     }
 
     return(
@@ -74,10 +60,6 @@ export const OppContainer = () => {
             {renderOppotunities()}
             <OppModal modalClass={modalClass} toggleModal={toggleModal} addOpportunity={addOpportunity}/>
             <OppDetailsModal modalClass={detailModalClass} toggleModal={toggleDetailModal} formValues={formValues} setFormValues={setFormValues} updateOpportunity={updateOpportunity}/>
-            <Contacts />
-            <AnalyticsDashboard opportunities={opportunities}/>
-            <Footer/>
         </>
     )
-
 }
