@@ -1,5 +1,5 @@
 .contacts-component {
-    width: 50vw;
+    width: 100vw;
     border-right: 1px solid rgb(88, 88, 88);
     background-color: rgb(15, 15, 15);
     color: whitesmoke;
@@ -37,6 +37,7 @@
 
 .contacts-container {
     padding: 16px;
+    width: 700px;
 }
 
 .contact-table-header {

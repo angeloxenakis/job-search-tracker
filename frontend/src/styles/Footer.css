@@ -1,0 +1,47 @@
+
+.footer-component {
+    background-color: rgb(26, 26, 26);
+    border-top: 1px solid rgb(88, 88, 88);
+    color: whitesmoke;
+    padding-top: 100px;
+}
+
+.footer-component h1 {
+    font-size: 68px;
+    margin: none;
+}
+
+.footer-container {
+    width: 60%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    margin-bottom: 100px;
+}
+
+
+.footer-menu {
+    width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-link {
+    width: 120px;
+}
+
+.foot-note {
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    border-top: 1px solid rgb(88, 88, 88);
+    color: rgb(88, 88, 88);
+    padding: 16px;
+    font-size: 14px;
+}
+
+.foot-note a {
+    font-weight: bold;
+    color: rgb(88, 88, 88);
+}

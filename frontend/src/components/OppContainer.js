@@ -7,6 +7,7 @@ import { NewRow } from "./NewRow"
 import { OppModal } from "./OppModal"
 import { OppDetailsModal } from "./OppDetailsModal"
 import { Contacts } from "./Contacts"
+import { Footer } from "./Footer"
 import { AnalyticsDashboard } from "./AnalyticsDashboard"
 import "../styles/OppContainer.css"
 import "../styles/OppModal.css"
@@ -56,7 +57,6 @@ export const OppContainer = () => {
                 <NewRow toggleModal={toggleModal}/>
             </div>
         }
- 
     }
 
     const addOpportunity = (newOpp) => {
@@ -74,11 +74,9 @@ export const OppContainer = () => {
             {renderOppotunities()}
             <OppModal modalClass={modalClass} toggleModal={toggleModal} addOpportunity={addOpportunity}/>
             <OppDetailsModal modalClass={detailModalClass} toggleModal={toggleDetailModal} formValues={formValues} setFormValues={setFormValues} updateOpportunity={updateOpportunity}/>
-            <div className="app-bottom-panel">
-                <Contacts />
-                <AnalyticsDashboard opportunities={opportunities}/>
-            </div>
-
+            <Contacts />
+            <AnalyticsDashboard opportunities={opportunities}/>
+            <Footer/>
         </>
     )
 
