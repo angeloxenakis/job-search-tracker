@@ -1,10 +1,10 @@
 import React from "react";
 import "../styles/OppTile.css"
 
-export const OppTile = ({ opportunity, toggleDetailModal }) => {
+export const OppTile = ({ opportunity, selectOpp }) => {
 
     const handleDetailClick = () => {
-        toggleDetailModal(opportunity)
+        selectOpp(opportunity)
     }
 
     return(

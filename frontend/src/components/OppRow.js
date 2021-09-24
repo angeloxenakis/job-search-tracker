@@ -1,9 +1,9 @@
 import React from "react";
 import "../styles/OppRow.css"
 
-export const OppRow = ({ opportunity, toggleDetailModal }) => {
+export const OppRow = ({ opportunity, selectOpp }) => {
     return(
-        <div className="opp-row" onClick={() => toggleDetailModal(opportunity)}>
+        <div className="opp-row" onClick={() => selectOpp(opportunity)}>
             <div className="row-block">
                 <h5>Job Title:</h5>
                 <h5>{ opportunity.job_title }</h5>

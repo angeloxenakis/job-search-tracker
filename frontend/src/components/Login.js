@@ -1,7 +1,9 @@
 import React from "react"
+import { Footer } from "./Footer"
 
 export const Login = () => {
     return(
+        <>
         <div className="login-panel">
             <form className="login-form">
                 <h1>Login</h1>
@@ -13,5 +15,7 @@ export const Login = () => {
                 <button className="login-btn">Login</button>
             </form>
         </div>
+        </>
+
     )
 }
